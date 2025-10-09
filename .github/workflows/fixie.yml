@@ -1,5 +1,6 @@
-name: Playwright Tests
+name: Bike
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0,12 * * *'
 jobs:

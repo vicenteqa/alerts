@@ -1,5 +1,6 @@
-name: Playwright Tests
+name: Betis
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0,5,10,15,20 * * *'
 
