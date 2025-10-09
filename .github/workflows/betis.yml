@@ -18,5 +18,4 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test tests/get-price.spec.js
-    - uses: actions/upload-artifact@v4
+      run: npx playwright test tests/get-betis.spec.js
