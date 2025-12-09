@@ -1,9 +1,13 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test('Alerta oferta Pegasus Trail 5 GTX', async ({ page }) => {
   await page.goto('https://www.nike.com/es/t/pegasus-trail-5-gore-tex-zapatillas-de-trail-running-impermeables-LPtVP4/FQ0908-002');
-  await page.getByTestId('modal-accept-button').click();
   
+  const modal = page.getByTestId('modal-accept-button');
+  if (await modal.isVisible({ timeout: 5000 }).catch(() => false)) {
+    await modal.click();
+  }
+
   await page.getByTestId('currentPrice-container').first().waitFor();
 
   const precio = await page.getByTestId('currentPrice-container').first().textContent();

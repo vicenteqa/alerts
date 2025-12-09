@@ -20,7 +20,10 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    locale: 'es-ES',
+    timezoneId: 'Europe/Madrid',
+    geolocation: { latitude: 40.4168, longitude: -3.7038 }, // Madrid
+    permissions: ['geolocation'],
     trace: 'on-first-retry',
   },
 
