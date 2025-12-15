@@ -13,7 +13,7 @@ test('Alerta oferta Pegasus Trail 5 GTX', async ({ page }) => {
   const precio = await page.getByTestId('currentPrice-container').first().textContent();
   const ariaDisabled = await page.locator('#grid-selector-input-10').getAttribute('aria-disabled');
 
-  const hayDescuento = precio !== '159,99 €';
+  const hayDescuento = !precio.includes('159,99');
   const tallaDisponible = ariaDisabled !== 'true';
 
   console.log(`Precio actual: ${precio} | Talla disponible: ${tallaDisponible}`);
